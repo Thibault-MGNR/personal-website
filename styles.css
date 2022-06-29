@@ -1,0 +1,162 @@
+/* GENERAL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    text-decoration: none;
+}
+
+.black {
+    color: white;
+}
+
+.white {
+    color: black;
+}
+
+/* HEADER */
+
+header {
+    background: url("images/fond.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+#header-content {
+    width: 100%;
+    height: 100vh;
+    background: #26262685;
+}
+
+#nav-bar {
+    color: white;
+    display: flex;
+    align-self:baseline;
+    justify-content: right;
+}
+
+#nav-bar ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 400px;
+    margin-right: 20px;
+}
+
+#nav-bar li{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    list-style: none;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#header-title {
+    display: flex;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    color: white;
+    font-family: 'Anek Malayalam', sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #nav-bar {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #nav-bar ul{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    
+    #nav-bar li{
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        list-style: none;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #header-title {
+        display: flex;
+        height: 70%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.nav-button:after{
+    background: white;
+    content: "";
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 0%;
+    transition: all 0.5s ease;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+}
+
+.nav-button a {
+    color: white;
+}
+
+.nav-button:hover::after {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+/* EDUCATION */
+#education {
+    height: 1000px;
+}
+
+#education h2 {
+    font-size: 100px;
+    margin: 0 auto;
+    margin-top: 500px;
+}
+/* ANIMATIONS */
+
+.fade-in {
+    animation: fadeInAnimation ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+#education .fade-in-animation:has {
+    background: green;
+}
+
+.hide {
+    opacity: 0;
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+    opacity: 0; 
+    } 
+    100% { 
+    opacity: 1;
+    }
+}
