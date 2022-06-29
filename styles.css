@@ -71,19 +71,27 @@ header h1 {
     text-align: center;
 }
 
+.gg-menu {
+    display: none;
+}
+
 @media (max-width: 600px) {
+    .gg-menu {
+        display: block;
+        margin-top: 30px;
+        margin-left: 25px;
+        transform: scale(var(--ggs, 1.5))
+    }
+
     #nav-bar {
         color: white;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-content: center;
     }
 
-    #nav-bar ul{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-content: center;
+    #nav-bar ul {
+        display: none;
     }
 
     
@@ -97,9 +105,13 @@ header h1 {
 
     #header-title {
         display: flex;
-        height: 70%;
+        height: 90%;
         align-items: center;
         justify-content: center;
+    }
+
+    #header-title h1{
+        font-size: 80px;
     }
 }
 
