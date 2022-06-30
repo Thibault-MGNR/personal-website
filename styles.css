@@ -66,7 +66,7 @@ header h1 {
     display: none;
 }
 
-@media (min-width: 601px){
+@media (min-width: 600px){
     header h1 {
         font-size: 100px;
     }
@@ -100,12 +100,35 @@ header h1 {
 }
 
 @media (max-width: 600px) {
+    /* ________________  ©css.gg  ____________________ */
+
     .gg-menu {
         display: block;
         margin-top: 30px;
         margin-left: 25px;
-        transform: scale(var(--ggs, 1.5))
     }
+    .gg-menu,
+    .gg-menu::after,
+    .gg-menu::before {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 3px;
+        border-radius: 4px;
+        background: currentColor;
+    }
+    .gg-menu::after,
+    .gg-menu::before {
+        content: "";
+        position: absolute;
+        top: -9px;
+    }
+    .gg-menu::after {
+        top: 9px;
+    }
+
+    /* ____________________________________ */
 
     #nav-bar {
         color: white;
@@ -155,9 +178,15 @@ header h1 {
 }
 /* ANIMATIONS */
 
+.rotate {
+    animation: rotation ease-in-out 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
 .fade-in {
     animation: fadeInAnimation ease 1s;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: initial; 
     animation-iteration-count: 1; 
 }
 
@@ -175,5 +204,26 @@ header h1 {
     } 
     100% { 
     opacity: 1;
+    }
+}
+
+@keyframes menuPopInAnimation {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    100% {
+        opacity: 1;
+        height: 100px;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
     }
 }
