@@ -104,7 +104,7 @@ header h1 {
 
     .gg-menu {
         display: block;
-        margin-top: 30px;
+        margin-top: 25px;
         margin-left: 25px;
         background: white;
     }
@@ -136,19 +136,30 @@ header h1 {
         display: flex;
         justify-content: flex-start;
         align-content: center;
+        flex-direction: column;
     }
 
     #nav-bar ul {
-        display: none;
+        /* display: none; */
+        background-color: rgba(30, 30, 30, 0.799);
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 25px;
+        width: 100%;
     }
 
-    
     #nav-bar li{
         font-family: 'Roboto', sans-serif;
-        font-size: 30px;
         list-style: none;
         margin-top: 15px;
         text-align: center;
+        height: 0px;
+        margin-top: 0px;
+    }
+
+    .nav-button a {
+        font-size: 20px;
+        opacity: 0;
     }
 
     #header-title {
@@ -179,6 +190,18 @@ header h1 {
 }
 /* ANIMATIONS */
 
+.menu-pop-in-li {
+    animation: nav-pop-in ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1;
+}
+
+.menu-pop-out-li {
+    animation: nav-pop-out ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1;
+}
+
 .rotate-menu-f {
     animation: rotation-0-90 ease-in-out 1s;
     animation-fill-mode: forwards; 
@@ -193,7 +216,25 @@ header h1 {
 
 .fade-in {
     animation: fadeInAnimation ease 1s;
-    animation-fill-mode: initial; 
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+.fade-out {
+    animation: fadeOutAnimation ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+.fade-in-menu-a {
+    animation: fadeInAnimationMenuA ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+.fade-out-menu-a {
+    animation: fadeOutAnimationMenuA ease 1s;
+    animation-fill-mode: forwards; 
     animation-iteration-count: 1; 
 }
 
@@ -205,12 +246,33 @@ header h1 {
     opacity: 0;
 }
 
+.slideInH1Title {
+    animation: slideInH1Title ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+.slideOutH1Title {
+    animation: slideOutH1Title ease 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
 @keyframes fadeInAnimation { 
     0% { 
     opacity: 0; 
     } 
     100% { 
     opacity: 1;
+    }
+}
+
+@keyframes fadeOutAnimation { 
+    0% { 
+    opacity: 1; 
+    } 
+    100% { 
+    opacity: 0;
     }
 }
 
@@ -242,5 +304,77 @@ header h1 {
 
     to {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes nav-pop-in {
+    from {
+        height: 0px;
+        margin-top: 0px;
+    }
+
+    to {
+        margin-top: 15px;
+        height: 25px;
+    }
+}
+
+@keyframes nav-pop-out {
+    from {
+        height: 25px;
+        margin-top: 15px;
+    }
+
+    to {
+        margin-top: 0px;
+        height: 0px;
+    }
+}
+
+@keyframes fadeInAnimationMenuA { 
+    0% { 
+    opacity: 0; 
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% { 
+    opacity: 1;
+    }
+}
+
+@keyframes fadeOutAnimationMenuA { 
+    0% { 
+    opacity: 1; 
+    } 
+    
+    25% {
+        opacity: 0;
+    }
+
+    100% { 
+    opacity: 0;
+    }
+}
+
+@keyframes slideInH1Title {
+    from {
+        height: 90%;
+    }
+
+    to {
+        height: 70%;
+    }
+}
+
+@keyframes slideOutH1Title {
+    from {
+        height: 70%;
+    }
+
+    to {
+        height: 90%;
     }
 }
