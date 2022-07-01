@@ -106,7 +106,7 @@ header h1 {
         display: block;
         margin-top: 30px;
         margin-left: 25px;
-        background: red;
+        background: white;
     }
     .gg-menu,
     .gg-menu::after,
@@ -117,7 +117,7 @@ header h1 {
         width: 30px;
         height: 3px;
         border-radius: 4px;
-        background: red;
+        background: white;
     }
     .gg-menu::after,
     .gg-menu::before {
@@ -179,8 +179,14 @@ header h1 {
 }
 /* ANIMATIONS */
 
-.rotate {
-    animation: rotation ease-in-out 1s;
+.rotate-menu-f {
+    animation: rotation-0-90 ease-in-out 1s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+}
+
+.rotate-menu-b {
+    animation: rotation-90-0 ease-in-out 1s;
     animation-fill-mode: forwards; 
     animation-iteration-count: 1; 
 }
@@ -219,12 +225,22 @@ header h1 {
     }
 }
 
-@keyframes rotation {
+@keyframes rotation-0-90 {
     from {
         transform: rotate(0deg);
     }
 
     to {
-        transform: rotate(359deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotation-90-0 {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
     }
 }

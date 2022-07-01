@@ -15,30 +15,24 @@ function reveal() {
 }
 
 function menuRotation() {
-  console.log("click");
-  menuButton.classList.remove("rotate");
-  window.requestAnimationFrame(function(time) {
-    window.requestAnimationFrame(function(time) {
-      if(menuButtonHover == true){
-        menuButton.classList.add("rotate");
-      }
-    });
-  });
+
+  if(menuIsDevelop){
+    menuButton.classList.remove("rotate-menu-f");
+    menuButton.classList.add("rotate-menu-b");
+    menuIsDevelop = false;
+  } else {
+    menuButton.classList.remove("rotate-menu-b");
+    menuButton.classList.add("rotate-menu-f");
+    menuIsDevelop = true;
+  }
 }
 
 function init(){
   window.addEventListener("scroll", reveal);
   menuButton = document.getElementById('menu-button');
   menuButton.addEventListener("click", menuRotation);
-  menuButton.addEventListener("mouseenter", function(event){
-    menuButtonHover = true;
-  });
-
-  menuButton.addEventListener("mouseleave", function(event){
-    menuButtonHover = false;
-  });
 }
 
 var menuButton = null;
-var menuButtonHover = false;
+var menuIsDevelop = false;
 window.addEventListener("DOMContentLoaded", init);
