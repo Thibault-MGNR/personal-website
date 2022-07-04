@@ -12,12 +12,21 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+    font-size: 2.2em;
+}
+
 .black {
     color: white;
 }
 
 .white {
     color: black;
+    background: #e6e6e6;
+}
+
+li {
+    list-style: none;
 }
 
 @media (min-width: 600px){
@@ -87,8 +96,7 @@ header h1 {
     }
 
     #nav-bar li{
-        font-size: 20px;
-        list-style: none;
+        font-size: 1.25em;
         margin-top: 25px;
         text-align: center;
     }
@@ -163,7 +171,6 @@ header h1 {
     }
 
     #nav-bar li{
-        list-style: none;
         margin-top: 15px;
         text-align: center;
         height: 0px;
@@ -171,7 +178,7 @@ header h1 {
     }
 
     .nav-button a {
-        font-size: 20px;
+        font-size: 1.4em;
         opacity: 0;
     }
 
@@ -183,7 +190,7 @@ header h1 {
     }
 
     #header-title h1{
-        font-size: 80px;
+        font-size: 5em;
     }
 }
 
@@ -192,18 +199,40 @@ header h1 {
 }
 
 /* ################ EDUCATION ################ */
-#education {
-    height: 100px;
+
+#education .wrapper .fade-in-container h2 {
+    padding: 20px 0;
 }
 
-#education h2 {
-    font-size: 30px;
-    height: 50px;
-    color: black;
+#education li {
+    border-radius: 10px;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    margin: 15px 0;
+}
+
+#education ul {
+    padding-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+    #education li:nth-child(2n){
+        border-top-left-radius: 0px;
+    }
     
-    /* font-weight: 400; */
-    margin-left: 20px;
-    margin-top: 20px;
+    #education li:nth-child(2n+1){
+        border-top-right-radius: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    #education li {
+        border-top-right-radius: 0px;
+    }
 }
 
 /* ################ FOOTER ################ */
@@ -218,7 +247,7 @@ footer {
 
 footer h2 {
     color: #666666;
-    font-size: 15px;
+    font-size: 1em;
     margin: auto 0;
 }
 
@@ -233,7 +262,7 @@ footer h2 {
     
     footer h2 {
         color: #666666;
-        font-size: 15px;
+        font-size: 1em;
         margin: auto 0;
     }
 }
