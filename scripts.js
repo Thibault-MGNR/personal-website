@@ -16,20 +16,28 @@ function reveal() {
 
 function menuRotation() {
   if(menuIsDevelop){
-    menuButton.classList.remove("rotate-menu-f");
-    menuButton.classList.add("rotate-menu-b");
-    popOutMenuLi();
-    popOutMenuA();
-    slideOutH1Title();
-    menuIsDevelop = false;
+    ascendMenu();
   } else {
-    menuButton.classList.remove("rotate-menu-b");
-    menuButton.classList.add("rotate-menu-f");
-    popInMenuLi();
-    popInMenuA();
-    slideInH1Title();
-    menuIsDevelop = true;
+    downMenu();
   }
+}
+
+function ascendMenu(){
+  menuButton.classList.remove("rotate-menu-f");
+  menuButton.classList.add("rotate-menu-b");
+  popOutMenuLi();
+  popOutMenuA();
+  slideOutH1Title();
+  menuIsDevelop = false;
+}
+
+function downMenu(){
+  menuButton.classList.remove("rotate-menu-b");
+  menuButton.classList.add("rotate-menu-f");
+  popInMenuLi();
+  popInMenuA();
+  slideInH1Title();
+  menuIsDevelop = true;
 }
 
 function popInMenuLi() {

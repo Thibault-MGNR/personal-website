@@ -1,4 +1,4 @@
-/* GENERAL */
+/* ################ GENERAL ################ */
 
 html {
     scroll-behavior: smooth;
@@ -9,6 +9,7 @@ html {
     padding: 0;
     text-transform: none;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .black {
@@ -19,7 +20,21 @@ html {
     color: black;
 }
 
-/* HEADER */
+@media (min-width: 600px){
+    .wrapper {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px){
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* ################ HEADER ################ */
 
 header {
     background: url("images/fond.png") no-repeat center;
@@ -72,7 +87,6 @@ header h1 {
     }
 
     #nav-bar li{
-        font-family: 'Roboto', sans-serif;
         font-size: 20px;
         list-style: none;
         margin-top: 25px;
@@ -100,7 +114,7 @@ header h1 {
 }
 
 @media (max-width: 600px) {
-    /* ________________  ©css.gg  ____________________ */
+    /* ___________ ©css.gg _______________ */
 
     .gg-menu {
         display: block;
@@ -149,7 +163,6 @@ header h1 {
     }
 
     #nav-bar li{
-        font-family: 'Roboto', sans-serif;
         list-style: none;
         margin-top: 15px;
         text-align: center;
@@ -178,17 +191,55 @@ header h1 {
     color: white;
 }
 
-/* EDUCATION */
+/* ################ EDUCATION ################ */
 #education {
-    height: 1000px;
+    height: 100px;
 }
 
 #education h2 {
-    font-size: 100px;
-    margin: 0 auto;
-    margin-top: 500px;
+    font-size: 30px;
+    height: 50px;
+    color: black;
+    
+    /* font-weight: 400; */
+    margin-left: 20px;
+    margin-top: 20px;
 }
-/* ANIMATIONS */
+
+/* ################ FOOTER ################ */
+
+footer {
+    background: #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 150px;
+}
+
+footer h2 {
+    color: #666666;
+    font-size: 15px;
+    margin: auto 0;
+}
+
+@media (max-width: 600px) {
+    footer {
+        background: #3d3d3d;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 100px;
+    }
+    
+    footer h2 {
+        color: #666666;
+        font-size: 15px;
+        margin: auto 0;
+    }
+}
+
+
+/* ################ ANIMATIONS ################ */
 
 .menu-pop-in-li {
     animation: nav-pop-in ease 1s;
@@ -203,13 +254,13 @@ header h1 {
 }
 
 .rotate-menu-f {
-    animation: rotation-0-90 ease-in-out 1s;
+    animation: rotation-0-90 ease 1s;
     animation-fill-mode: forwards; 
     animation-iteration-count: 1; 
 }
 
 .rotate-menu-b {
-    animation: rotation-90-0 ease-in-out 1s;
+    animation: rotation-90-0 ease 1s;
     animation-fill-mode: forwards; 
     animation-iteration-count: 1; 
 }
@@ -236,10 +287,6 @@ header h1 {
     animation: fadeOutAnimationMenuA ease 1s;
     animation-fill-mode: forwards; 
     animation-iteration-count: 1; 
-}
-
-#education .fade-in-animation:has {
-    background: green;
 }
 
 .hide {
