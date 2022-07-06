@@ -75,7 +75,7 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    width: 400px;
+    width: 470px;
     margin-right: 20px;
 }
 
@@ -92,13 +92,17 @@ header h1 {
     text-align: center;
 }
 
+.nav-button::first-letter{
+    text-transform: uppercase;
+}
+
 .gg-menu {
     display: none;
 }
 
 @media (min-width: 600px){
     header h1 {
-        font-size: 100px;
+        font-size: 6em;
     }
 
     #nav-bar li{
@@ -211,7 +215,6 @@ header h1 {
 }
 
 #education-list {
-    min-width: 600px;
     max-width: 700px;
     margin: 0 auto;
     margin-top: 5%;
@@ -242,7 +245,30 @@ header h1 {
     align-self: center;
 }
 
-@media (min-width: 900px) {
+#education li::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 100px;
+    background: black;
+}
+
+#education li:last-child::before {
+    background: linear-gradient(black, black 50%, rgba(0, 0, 0, 0));
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+#education li::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: black;
+    border-radius: 100%;
+}
+
+@media (min-width: 800px) {
     #education li:nth-child(2n){
         border-top-left-radius: 0px;
         align-self: flex-end;
@@ -254,38 +280,33 @@ header h1 {
     }
 
     #education li::before {
-        content: "";
-        position: absolute;
-        width: 13px;
-        height: 100px;
         right: 50%;
         left: 50%;
         transform: translate(-50%, 0%);
-        background: black;
-    }
-
-    #education li:last-child::before {
-        background: linear-gradient(black, black 50%, rgba(0, 0, 0, 0));
-        border-bottom-left-radius: 10%;
-        border-bottom-right-radius: 10%;
     }
 
     #education li::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
         right: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: black;
-        border-radius: 100%;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     #education li {
         border-top-right-radius: 0px;
+    }
+
+    #education li::before {
+        right: 20%;
+        left: 80%;
+        transform: translate(-50%, 0%);
+    }
+
+    #education li::after {
+        right: 20%;
+        left: 80%;
+        transform: translate(-50%, -50%);
     }
 }
 
