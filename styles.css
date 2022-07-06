@@ -13,7 +13,9 @@ html {
 }
 
 h2 {
-    font-size: 2.2em;
+    font-size: 3em;
+    padding: 20px 0;
+    margin-left: 10%;
 }
 
 .black {
@@ -27,6 +29,10 @@ h2 {
 
 li {
     list-style: none;
+}
+
+.wrapper {
+    height: 100%;
 }
 
 @media (min-width: 600px){
@@ -200,36 +206,84 @@ header h1 {
 
 /* ################ EDUCATION ################ */
 
-#education .wrapper .fade-in-container h2 {
-    padding: 20px 0;
+#education {
+    height: 800px;
 }
 
-#education li {
-    border-radius: 10px;
-    width: 250px;
-    height: 100px;
+#education-list {
+    min-width: 600px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+#education li {
+    border-radius: 15px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
     background: white;
     margin: 15px 0;
 }
 
-#education ul {
-    padding-bottom: 20px;
+#education-list h3 {
+    align-self: center;
+    justify-content: flex-start;
+    padding-top: 10px;
 }
 
-@media (min-width: 600px) {
+#education-list p {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    align-self: center;
+}
+
+@media (min-width: 900px) {
     #education li:nth-child(2n){
         border-top-left-radius: 0px;
+        align-self: flex-end;
     }
     
     #education li:nth-child(2n+1){
         border-top-right-radius: 0px;
+        align-self: flex-start;
+    }
+
+    #education li::before {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 100px;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background: black;
+    }
+
+    #education li:last-child::before {
+        background: linear-gradient(black, black 50%, rgba(0, 0, 0, 0));
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+    }
+
+    #education li::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: black;
+        border-radius: 100%;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     #education li {
         border-top-right-radius: 0px;
     }
